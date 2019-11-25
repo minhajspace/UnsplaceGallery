@@ -10,6 +10,8 @@ class Search extends React.Component {
   };
   onFormSubmit(event) {
     event.prevent.defaut();
+
+    this.props.onSubmit(this.state.inputValue);
   }
 
   render() {
@@ -21,7 +23,7 @@ class Search extends React.Component {
             <input
               className=""
               type="text"
-              // value={this.state.inputValue}
+              value={this.state.inputValue}
               onChange={this.onChange}
             />
           </div>
