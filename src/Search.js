@@ -8,18 +8,18 @@ class Search extends React.Component {
   onChange = event => {
     this.setState({ inputValue: event.target.value });
   };
-  onFormSubmit(event) {
-    event.prevent.defaut();
-
+  onFormSubmit = event => {
+    event.preventDefault();
+    // const { inputValue } = this.state;
     this.props.onSubmit(this.state.inputValue);
-  }
+  };
 
   render() {
     return (
       <div className=" ui segment">
-        <from className="ui form " onSubmit={this.onFormSubmit}>
+        <form onSubmit={this.onFormSubmit} className="ui form ">
           <div className="field">
-            <lable className="">Image Search</lable>
+            <label className="">Image Search</label>
             <input
               className=""
               type="text"
@@ -27,7 +27,7 @@ class Search extends React.Component {
               onChange={this.onChange}
             />
           </div>
-        </from>
+        </form>
       </div>
     );
   }
