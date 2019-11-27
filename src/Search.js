@@ -10,8 +10,8 @@ class Search extends React.Component {
   };
   onFormSubmit = event => {
     event.preventDefault();
-    // const { inputValue } = this.state;
-    this.props.onSubmit(this.state.inputValue);
+    const { inputValue } = this.state;
+    this.props.onSubmit(inputValue);
   };
 
   render() {
